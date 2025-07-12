@@ -1,0 +1,7 @@
+[*.{html,css}]
+#indent style
+indent_style=tab
+#trim trailing
+trim_trailing_whitespace=true
+#final new line
+insert_final_newline=true

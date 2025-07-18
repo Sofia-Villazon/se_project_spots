@@ -88,7 +88,7 @@
 .profile__button-icon {
 	/* margin: auto 0 0; */
 }
-.button__new-post {
+.button__post {
 	margin: auto 0 20px auto;
 	background-color: #212121;
 	height: 52px;
@@ -103,15 +103,11 @@
 	border: none;
 	white-space: nowrap;
 }
-.button__new-post:hover {
+.button__post:hover {
 	opacity: 80%;
 	cursor: pointer;
 }
 
-.button__new-post__logo {
-	margin: 0;
-	padding: 0;
-}
 @media screen and (max-width: 630px) {
 	.profile {
 		padding: 0;

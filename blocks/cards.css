@@ -1,0 +1,94 @@
+.cards {
+	margin: 0;
+	padding: 20px 80px 0;
+}
+
+.cards__grid {
+	margin: 0;
+	padding-bottom: 40px;
+	max-width: 1280px;
+	min-height: 970px;
+	display: grid;
+	column-gap: 20px;
+	row-gap: 40px;
+	grid-template-columns: minmax(288px, 413px) minmax(288px, 413px) minmax(
+			288px,
+			413px
+		);
+	grid-template-rows: 1fr 1fr;
+	border-bottom: 1px solid #21212166;
+	justify-content: center;
+}
+
+.card {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.content__card-image {
+	width: 100%;
+	padding-bottom: 100%;
+	background-size: cover;
+	background-position: center;
+	border-radius: 10px;
+}
+.content__card-image_val_thorens {
+	background-image: url(../images/1-photo-by-moritz-feldmann-from-pexels.jpg);
+}
+.content__card-image_restaurant_terrace {
+	background-image: url(../images/2-photo-by-ceiline-from-pexels.jpg);
+}
+.content__card-image_outdoor_cafe {
+	background-image: url(../images/3-photo-by-tubanur-dogan-from-pexels.jpg);
+}
+.content__card-image_long_brige {
+	background-image: url(../images/4-photo-by-maurice-laschet-from-pexels.jpg);
+}
+.content__card-image_tunnel {
+	background-image: url(../images/5-photo-by-van-anh-nguyen-from-pexels.jpg);
+}
+
+.content__card-image_mountain_house {
+	background-image: url(../images/6-photo-by-moritz-feldmann-from-pexels.jpg);
+}
+
+.card__text {
+	width: 90%;
+	padding: 0;
+	margin: 12px 0 0;
+	font-weight: 500;
+	font-family: "Poppins Medium", Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	line-height: 120%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.card__like-icon {
+	margin: 12px 0 0 auto;
+	max-width: 23px;
+	max-height: 20px;
+	opacity: 40%;
+}
+
+.card__like-icon:hover {
+	opacity: 100%;
+	cursor: pointer;
+}
+
+@media screen and (min-width: 630px) and (max-width: 1320px) {
+	.cards__grid {
+		grid-template-columns: minmax(288px, 413px) minmax(288px, 413px);
+		grid-template-rows: 1fr 1fr 1fr;
+	}
+}
+@media screen and (max-width: 630px) {
+	.cards {
+		padding: 20px 16px 0;
+	}
+	.cards__grid {
+		display: flex;
+		flex-direction: column;
+	}
+}

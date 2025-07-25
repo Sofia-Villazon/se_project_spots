@@ -2,7 +2,7 @@
 	padding: 34px 0 20px;
 	margin: 0 80px;
 
-	min-height: 210px;
+	min-height: 280px;
 	max-width: 1280px;
 	min-width: 288px;
 }
@@ -85,10 +85,9 @@
 	opacity: 100%;
 	cursor: pointer;
 }
-.profile__button-icon {
-	/* margin: auto 0 0; */
-}
+
 .profile__post-button {
+	display: flex;
 	margin: auto 0 20px auto;
 	background-color: #212121;
 	height: 52px;
@@ -111,7 +110,8 @@
 @media screen and (max-width: 630px) {
 	.profile {
 		padding: 0;
-		margin: 0;
+		margin: 0 auto;
+		max-width: 288px;
 	}
 	.profile__content {
 		padding: 0 0 20px;
@@ -125,6 +125,7 @@
 
 	.profile__photo {
 		margin: 0 auto;
+		max-width: 80px;
 	}
 
 	.profile__avatar-text {
@@ -142,9 +143,13 @@
 		margin: 32px auto 0;
 		padding: 0;
 	}
-	.button__new-post {
+	.profile__post-button {
+		justify-content: center;
+		width: 100%;
 		position: static;
 		margin: 20px auto 0;
 		padding: 0;
+		align-items: center;
+		font-size: 16px;
 	}
 }

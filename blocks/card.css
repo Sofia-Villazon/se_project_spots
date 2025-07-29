@@ -1,7 +1,6 @@
 .card {
 	margin: 0;
 }
-
 .card__image {
 	object-fit: cover;
 	width: 100%;
@@ -30,11 +29,8 @@
 .card__like-button {
 	height: 20px;
 	width: 23px;
-
 	opacity: 40%;
-
 	background: center / contain no-repeat rgb(0, 0, 0, 0) url(/images/Union.png);
-
 	border: 0;
 }
 

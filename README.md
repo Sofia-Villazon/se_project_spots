@@ -38,3 +38,7 @@ Good luck and have fun!
 **Deployed link**
 
 - [Project 3: Spots](https://sofia-villazon.github.io/se_project_spots)
+
+**Video about my project**
+
+- [About Project 3: Spots](https://youtu.be/W-RybI_ma5o)

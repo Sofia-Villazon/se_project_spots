@@ -12,9 +12,9 @@
 	font-family: "Poppins Medium", Arial, Helvetica, sans-serif;
 }
 
-.modal_is-opened {
+/* .modal_is-opened {
 	visibility: visible;
-}
+} */
 
 .modal__container {
 	margin: 0 10px;

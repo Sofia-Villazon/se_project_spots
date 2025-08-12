@@ -1,0 +1,10 @@
+.footer {
+	margin: 0;
+	padding: 60px 0;
+}
+.footer__copyright {
+	margin: 0;
+	text-align: center;
+	opacity: 70%;
+	font-weight: 400;
+}

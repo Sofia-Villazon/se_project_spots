@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="interactive social media web application where users can add and remove photos"
+		/>
+		<meta name="author" content="Sofia Villazon" />
+		<meta name="keywords" content="Social media, Photos, Share" />
+		<title>Spots</title>
+		<link rel="stylesheet" href="./pages/index.css" />
+		<link rel="icon" href="./favicon.ico" />
+	</head>
+	<body>
+		<div class="page">
+			<header class="header">
+				<img
+					src="./images/Spots_logo.png"
+					alt="Spotss logo"
+					class="header__logo"
+				/>
+			</header>
+			<main class="content">
+				<section class="profile">
+					<div class="profile__content">
+						<div class="profile__avatar">
+							<img
+								src="./images/avatar.jpg"
+								alt="avatar profile's photo"
+								class="profile__photo"
+							/>
+							<div class="profile__avatar-text">
+								<div>
+									<h1 class="profile__name">Bessie Coleman</h1>
+									<p class="profile__description">Civil aviator</p>
+								</div>
+
+								<button class="profile__button">
+									<img
+										src="./images/Edit_Icon.png"
+										alt="edit icon"
+										class="profile__button-icon"
+									/>
+									Edit Profile
+								</button>
+							</div>
+						</div>
+						<button class="profile__post-button">
+							<img
+								src="./images/Plus_icon.png"
+								alt="plus icon"
+								class="profile__post-icon"
+							/>
+							New Post
+						</button>
+					</div>
+				</section>
+				<section class="cards">
+					<div class="cards__grid">
+						<div class="card">
+							<img
+								src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
+								alt="Val Thorens image"
+								class="card__image"
+							/>
+							<div class="card__content">
+								<h2 class="card__title">Val Thorens</h2>
+								<button class="card__like-button" type="button"></button>
+							</div>
+						</div>
+						<div class="card">
+							<img
+								src="./images/2-photo-by-ceiline-from-pexels.jpg"
+								alt="Restaurant terrace image"
+								class="card__image"
+							/>
+							<div class="card__content">
+								<h2 class="card__title">Restaurant terrace</h2>
+								<button class="card__like-button" type="button"></button>
+							</div>
+						</div>
+						<div class="card">
+							<img
+								src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
+								alt="Outdoor cafe image"
+								class="card__image"
+							/>
+							<div class="card__content">
+								<h2 class="card__title">An outdoor cafe</h2>
+								<button class="card__like-button" type="button"></button>
+							</div>
+						</div>
+						<div class="card">
+							<img
+								src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
+								alt="Long bridge image"
+								class="card__image"
+							/>
+							<div class="card__content">
+								<h2 class="card__title">
+									A very long bridge, over the forest that leads into the
+									biggest mountain in Ulala.
+								</h2>
+								<button class="card__like-button" type="button"></button>
+							</div>
+						</div>
+						<div class="card">
+							<img
+								src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
+								alt="Tunnel image"
+								class="card__image"
+							/>
+							<div class="card__content">
+								<h2 class="card__title">Tunnel with morning light</h2>
+								<button class="card__like-button" type="button"></button>
+							</div>
+						</div>
+						<div class="card">
+							<img
+								src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
+								alt="Mountain image"
+								class="card__image"
+							/>
+							<div class="card__content">
+								<h2 class="card__title">Mountain house</h2>
+								<button class="card__like-button" type="button"></button>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer class="footer">
+				<p class="footer__copyright">2025 &copy; Sofia Villazon</p>
+			</footer>
+			<div class="modal" id="edit-profile-modal">
+				<div class="modal__container">
+					<button type="button" class="modal__close-btn"></button>
+					<h2 class="modal__title">Edit Profile</h2>
+					<form class="modal__form">
+						<label for="profile-name-input" class="modal__label"
+							>Name<input
+								id="profile-name-input"
+								type="text"
+								class="modal__input"
+								placeholder="Type your name"
+						/></label>
+						<label for="profile-description-input" class="modal__label"
+							>Description<input
+								id="profile-description-input"
+								type="text"
+								class="modal__input"
+								placeholder="Describe yourself"
+						/></label>
+						<button type="submit" class="modal__submit-btn">Save</button>
+					</form>
+				</div>
+			</div>
+			<div class="modal" id="new-post-modal">
+				<div class="modal__container">
+					<button type="button" class="modal__close-btn"></button>
+					<h2 class="modal__title">New post</h2>
+					<form class="modal__form">
+						<label for="card-image-input" class="modal__label"
+							>Image link<input
+								id="card-image-input"
+								type="url"
+								class="modal__input"
+								placeholder="Place a link to the picture"
+						/></label>
+						<label for="card-caption-input" class="modal__label"
+							>Caption<input
+								id="card-caption-input"
+								type="text"
+								class="modal__input"
+								placeholder="Type your caption"
+						/></label>
+						<button type="submit" class="modal__submit-btn">Save</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script src="scripts/index.js"></script>
+	</body>
+</html>

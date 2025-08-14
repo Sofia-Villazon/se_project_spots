@@ -82,6 +82,7 @@
 .modal__input::placeholder {
 	color: #2121214d;
 }
+
 .modal__submit-btn {
 	padding: 18px 0;
 	background-color: #212121;
@@ -92,6 +93,11 @@
 	font-family: "Poppins Medium", Arial, Helvetica, sans-serif;
 	font-size: 16px;
 	font-weight: 500;
+}
+
+.modal__submit-btn:hover {
+	opacity: 80%;
+	cursor: pointer;
 }
 
 @media screen and (max-width: 630px) {

@@ -46,7 +46,7 @@ function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileJobElement.textContent = jobInput.value;
   profileNameElement.textContent = nameInput.value;
-  editProfileModal.classList.remove("modal_is-opened");
+  closeModal(editProfileModal);
 }
 
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
@@ -54,8 +54,9 @@ profileFormElement.addEventListener("submit", handleProfileFormSubmit);
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
   console.log(linkInput.value);
-  console.log(captionInput);
-  newPostModal.classList.remove("modal_is-opened");
+  console.log(captionInput.value);
+  evt.target.reset();
+  closeModal(newPostModal);
 }
 
 addCardFormElement.addEventListener("submit", handleAddCardSubmit);

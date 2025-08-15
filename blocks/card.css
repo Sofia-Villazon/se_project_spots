@@ -30,11 +30,12 @@
 	height: 20px;
 	width: 23px;
 	opacity: 40%;
-	background: center / contain no-repeat rgb(0, 0, 0, 0) url(/images/Union.png);
+	background: center / contain no-repeat rgb(0, 0, 0, 0)
+		url(../images/Union.png);
 	border: 0;
 }
 
-.card__like-icon:hover {
+.card__like-button:hover {
 	opacity: 100%;
 	cursor: pointer;
 }

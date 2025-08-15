@@ -40,7 +40,7 @@
 	border: none;
 	opacity: 40%;
 	background: center / contain no-repeat rgb(0, 0, 0, 0)
-		url(/images/clos-btn_icon.png);
+		url(../images/close-btn_icon.png);
 }
 
 .modal__close-btn:hover {
@@ -74,7 +74,7 @@
 	margin: 8px 0 0;
 	width: 100%;
 	border-radius: 8px;
-	border-color: #21212166;
+	border: 1px solid #21212166;
 	font-family: "Poppins Medium", Arial, Helvetica, sans-serif;
 	font-size: 20px;
 }

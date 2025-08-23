@@ -59,75 +59,17 @@
 				</section>
 				<section class="cards">
 					<div class="cards__grid">
-						<div class="card">
-							<img
-								src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
-								alt="Val Thorens image"
-								class="card__image"
-							/>
-							<div class="card__content">
-								<h2 class="card__title">Val Thorens</h2>
-								<button class="card__like-button" type="button"></button>
-							</div>
-						</div>
-						<div class="card">
-							<img
-								src="./images/2-photo-by-ceiline-from-pexels.jpg"
-								alt="Restaurant terrace image"
-								class="card__image"
-							/>
-							<div class="card__content">
-								<h2 class="card__title">Restaurant terrace</h2>
-								<button class="card__like-button" type="button"></button>
-							</div>
-						</div>
-						<div class="card">
-							<img
-								src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
-								alt="Outdoor cafe image"
-								class="card__image"
-							/>
-							<div class="card__content">
-								<h2 class="card__title">An outdoor cafe</h2>
-								<button class="card__like-button" type="button"></button>
-							</div>
-						</div>
-						<div class="card">
-							<img
-								src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
-								alt="Long bridge image"
-								class="card__image"
-							/>
-							<div class="card__content">
-								<h2 class="card__title">
-									A very long bridge, over the forest that leads into the
-									biggest mountain in Ulala.
-								</h2>
-								<button class="card__like-button" type="button"></button>
-							</div>
-						</div>
-						<div class="card">
-							<img
-								src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
-								alt="Tunnel image"
-								class="card__image"
-							/>
-							<div class="card__content">
-								<h2 class="card__title">Tunnel with morning light</h2>
-								<button class="card__like-button" type="button"></button>
-							</div>
-						</div>
-						<div class="card">
-							<img
-								src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
-								alt="Mountain image"
-								class="card__image"
-							/>
-							<div class="card__content">
-								<h2 class="card__title">Mountain house</h2>
-								<button class="card__like-button" type="button"></button>
-							</div>
-						</div>
+						<template id="card-template"
+							><div class="card">
+								<img src="" alt="" class="card__image" /><button
+									class="card__delete-button"
+									type="button"
+								></button>
+								<div class="card__content">
+									<h2 class="card__title"></h2>
+									<button class="card__like-button" type="button"></button>
+								</div></div
+						></template>
 					</div>
 				</section>
 			</main>
@@ -178,6 +120,20 @@
 						/></label>
 						<button type="submit" class="modal__submit-btn">Save</button>
 					</form>
+				</div>
+			</div>
+			<div class="modal modal_type_preview" id="image-preview-modal">
+				<div class="modal__image-container">
+					<button
+						type="button"
+						class="modal__close-btn modal__close-btn_type_preview"
+					></button>
+					<img
+						src="https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg"
+						alt=""
+						class="modal__image"
+					/>
+					<p class="modal__caption">Colombia</p>
 				</div>
 			</div>
 		</div>

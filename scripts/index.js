@@ -42,6 +42,52 @@ const profileJobElement = document.querySelector(".profile__description");
 const captionInput = newPostModal.querySelector("#card-caption-input");
 const linkInput = newPostModal.querySelector("#card-image-input");
 
+const imagePreviewModal = document.querySelector("#image-preview-modal");
+const imagePreviewCloseBtn = imagePreviewModal.querySelector(
+  ".modal__close-btn_type_preview"
+);
+const imagePreviewImage = imagePreviewModal.querySelector(".modal__image");
+const imagePreviewCaption = imagePreviewModal.querySelector(".modal__caption");
+
+const cardTemplate = document
+  .querySelector("#card-template")
+  .content.querySelector(".card");
+const cardsGrid = document.querySelector(".cards__grid");
+
+imagePreviewCloseBtn.addEventListener("click", function () {
+  closeModal(imagePreviewModal);
+});
+
+function getCardElement(data) {
+  const cardElement = cardTemplate.cloneNode(true);
+
+  const cardImage = cardElement.querySelector(".card__image");
+  const cardTitle = cardElement.querySelector(".card__title");
+
+  cardImage.src = data.link;
+  cardImage.alt = data.name;
+  cardTitle.textContent = data.name;
+
+  const cardLikeButton = cardElement.querySelector(".card__like-button");
+  cardLikeButton.addEventListener("click", function (evt) {
+    evt.target.classList.toggle("card__button_active");
+  });
+
+  const cardDeleteButton = cardElement.querySelector(".card__delete-button");
+  cardDeleteButton.addEventListener("click", function () {
+    cardElement.remove();
+  });
+
+  cardElement.addEventListener("click", function () {
+    imagePreviewCaption.textContent = data.name;
+    imagePreviewImage.src = data.link;
+    imagePreviewImage.alt = data.link;
+    openModal(imagePreviewModal);
+  });
+
+  return cardElement;
+}
+
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
 }
@@ -79,8 +125,16 @@ profileFormElement.addEventListener("submit", handleProfileFormSubmit);
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-  console.log(linkInput.value);
-  console.log(captionInput.value);
+
+  const inputValue = {
+    name: captionInput.value,
+    link: linkInput.value,
+  };
+
+  const cardElement = getCardElement(inputValue);
+  console.log(getCardElement);
+  cardsGrid.prepend(cardElement);
+
   evt.target.reset();
   closeModal(newPostModal);
 }
@@ -88,5 +142,5 @@ function handleAddCardSubmit(evt) {
 addCardFormElement.addEventListener("submit", handleAddCardSubmit);
 
 initialCards.forEach(function (item) {
-  console.log(item.name);
+  cardsGrid.prepend(getCardElement(item));
 });

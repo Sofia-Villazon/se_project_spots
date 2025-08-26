@@ -78,10 +78,10 @@ function getCardElement(data) {
     cardElement.remove();
   });
 
-  cardElement.addEventListener("click", function () {
+  cardImage.addEventListener("click", function () {
     imagePreviewCaption.textContent = data.name;
     imagePreviewImage.src = data.link;
-    imagePreviewImage.alt = data.link;
+    imagePreviewImage.alt = data.name;
     openModal(imagePreviewModal);
   });
 

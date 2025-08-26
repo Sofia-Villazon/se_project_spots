@@ -10,10 +10,14 @@
 	border-radius: 10px;
 }
 
+.card__image:hover {
+	cursor: pointer;
+}
+
 .card__delete-button {
 	height: 32px;
 	width: 32px;
-	background: center / contain no-repeat rgb(0, 0, 0, 0)
+	background: center / contain no-repeat rgba(0, 0, 0, 0)
 		url(../images/State=Default.png);
 	border: 0;
 	position: absolute;
@@ -23,6 +27,7 @@
 
 .card__delete-button:hover {
 	background-image: url(../images/State=Hover.png);
+	cursor: pointer;
 }
 
 .card__content {
@@ -47,7 +52,7 @@
 	height: 20px;
 	width: 23px;
 	opacity: 40%;
-	background: center / contain no-repeat rgb(0, 0, 0, 0)
+	background: center / contain no-repeat rgba(0, 0, 0, 0)
 		url(../images/Union.png);
 	border: 0;
 }

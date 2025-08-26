@@ -40,7 +40,7 @@
 }
 
 .modal__close-btn {
-	padding: auto;
+	padding: 0;
 	position: absolute;
 	width: 40px;
 	height: 40px;
@@ -83,7 +83,7 @@
 	margin: 8px 0 0;
 	color: white;
 	font-size: 20px;
-	font-weight: 500px;
+	font-weight: 500;
 	background-color: #212121;
 	border-radius: 8px;
 	padding: 4px 8px;
@@ -162,12 +162,12 @@
 	}
 
 	.modal__close-btn_type_preview {
-		top: -52.5px;
+		top: -48px;
 		right: 0;
 	}
 
 	.modal__image {
-		max-width: unst;
+		max-width: unset;
 	}
 
 	.modal__caption {

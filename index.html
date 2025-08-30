@@ -88,6 +88,7 @@
 								type="text"
 								class="modal__input"
 								placeholder="Type your name"
+								required
 						/></label>
 						<label for="profile-description-input" class="modal__label"
 							>Description<input
@@ -95,6 +96,7 @@
 								type="text"
 								class="modal__input"
 								placeholder="Describe yourself"
+								required
 						/></label>
 						<button type="submit" class="modal__submit-btn">Save</button>
 					</form>
@@ -104,7 +106,7 @@
 				<div class="modal__container">
 					<button type="button" class="modal__close-btn"></button>
 					<h2 class="modal__title">New post</h2>
-					<form class="modal__form">
+					<form class="modal__form" name="editProfileForm">
 						<label for="card-image-input" class="modal__label"
 							>Image link<input
 								id="card-image-input"

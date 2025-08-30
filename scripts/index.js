@@ -32,7 +32,7 @@ const profileFormElement = editProfileModal.querySelector(".modal__form");
 const postButton = document.querySelector(".profile__post-button");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
-const addCardFormElement = newPostModal.querySelector(".modal__form");
+const addCardFormElement = document.forms["editProfileForm"];
 
 const nameInput = editProfileModal.querySelector("#profile-name-input");
 const jobInput = editProfileModal.querySelector("#profile-description-input");
@@ -132,7 +132,6 @@ function handleAddCardSubmit(evt) {
   };
 
   const cardElement = getCardElement(inputValue);
-  console.log(getCardElement);
   cardsGrid.prepend(cardElement);
 
   evt.target.reset();

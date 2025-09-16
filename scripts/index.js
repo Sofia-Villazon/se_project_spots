@@ -24,6 +24,7 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
 ];
+const formModal = document.querySelectorAll(".modal");
 const profileButton = document.querySelector(".profile__button");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
@@ -38,9 +39,11 @@ const nameInput = editProfileModal.querySelector("#profile-name-input");
 const jobInput = editProfileModal.querySelector("#profile-description-input");
 const profileNameElement = document.querySelector(".profile__name");
 const profileJobElement = document.querySelector(".profile__description");
+const profileSubmitBtn = editProfileModal.querySelector(".modal__submit-btn");
 
 const captionInput = newPostModal.querySelector("#card-caption-input");
 const linkInput = newPostModal.querySelector("#card-image-input");
+const cardSubmitBtn = newPostModal.querySelector(".modal__submit-btn");
 
 const imagePreviewModal = document.querySelector("#image-preview-modal");
 const imagePreviewCloseBtn = imagePreviewModal.querySelector(
@@ -96,10 +99,28 @@ function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
 }
 
+formModal.forEach(function (form) {
+  form.addEventListener("click", (evt) => {
+    if (evt.target == form) {
+      closeModal(form);
+    }
+  });
+});
+
+function escapeModal(evt) {
+  if (evt.key === "Escape" || evt.keyCode === 27) {
+    const openedModal = document.querySelector(".modal_is-opened");
+    closeModal(openedModal);
+  }
+}
+
+document.addEventListener("keydown", escapeModal);
+
 profileButton.addEventListener("click", function () {
   openModal(editProfileModal);
   nameInput.value = profileNameElement.textContent;
   jobInput.value = profileJobElement.textContent;
+  resetValidation(editProfileModal, [nameInput, jobInput]);
 });
 
 editProfileCloseBtn.addEventListener("click", function () {
@@ -118,6 +139,7 @@ function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileJobElement.textContent = jobInput.value;
   profileNameElement.textContent = nameInput.value;
+  disableBtnElement(profileSubmitBtn, settings);
   closeModal(editProfileModal);
 }
 
@@ -135,6 +157,7 @@ function handleAddCardSubmit(evt) {
   cardsGrid.prepend(cardElement);
 
   evt.target.reset();
+  disableBtnElement(cardSubmitBtn, settings);
   closeModal(newPostModal);
 }
 

@@ -130,6 +130,18 @@
 	color: #2121214d;
 }
 
+.modal__input_type_error {
+	border: 1px solid #ff000099;
+}
+
+.modal__error {
+	display: block;
+	color: #ff0000b2;
+	font-weight: 500;
+	line-height: 110.00000000000001%;
+	padding-top: 8px;
+}
+
 .modal__submit-btn {
 	padding: 18px 0;
 	background-color: #212121;
@@ -145,6 +157,10 @@
 .modal__submit-btn:hover {
 	opacity: 80%;
 	cursor: pointer;
+}
+
+.modal__submit-btn_inactive {
+	opacity: 20%;
 }
 
 @media screen and (max-width: 630px) {

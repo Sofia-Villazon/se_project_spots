@@ -24,7 +24,7 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
 ];
-const formModal = document.querySelectorAll(".modal");
+const formModals = document.querySelectorAll(".modal");
 const profileButton = document.querySelector(".profile__button");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
@@ -91,15 +91,25 @@ function getCardElement(data) {
   return cardElement;
 }
 
+function closeOnEscape(evt) {
+  if (evt.key === "Escape" || evt.keyCode === 27) {
+    const openedModal = document.querySelector(".modal_is-opened");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
+  }
+}
+
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  document.addEventListener("keydown", closeOnEscape);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
 }
 
-formModal.forEach(function (form) {
+formModals.forEach(function (form) {
   form.addEventListener("click", (evt) => {
     if (evt.target == form) {
       closeModal(form);
@@ -107,19 +117,17 @@ formModal.forEach(function (form) {
   });
 });
 
-function escapeModal(evt) {
-  if (evt.key === "Escape" || evt.keyCode === 27) {
-    const openedModal = document.querySelector(".modal_is-opened");
-    closeModal(openedModal);
-  }
-}
-
-document.addEventListener("keydown", escapeModal);
-
 profileButton.addEventListener("click", function () {
   openModal(editProfileModal);
   nameInput.value = profileNameElement.textContent;
   jobInput.value = profileJobElement.textContent;
+
+  const validationSettings = {
+    inputErrorClass: "modal__input_type_error",
+    errorClass: "modal__error_visible",
+    inactiveButtonClass: "modal__button_disabled",
+  };
+
   resetValidation(editProfileModal, [nameInput, jobInput]);
 });
 

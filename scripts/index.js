@@ -107,11 +107,12 @@ function openModal(modal) {
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  document.removeEventListener("keyup", closeOnEscape);
 }
 
 formModals.forEach(function (form) {
   form.addEventListener("click", (evt) => {
-    if (evt.target == form) {
+    if (evt.target === form) {
       closeModal(form);
     }
   });
@@ -122,13 +123,7 @@ profileButton.addEventListener("click", function () {
   nameInput.value = profileNameElement.textContent;
   jobInput.value = profileJobElement.textContent;
 
-  const validationSettings = {
-    inputErrorClass: "modal__input_type_error",
-    errorClass: "modal__error_visible",
-    inactiveButtonClass: "modal__button_disabled",
-  };
-
-  resetValidation(editProfileModal, [nameInput, jobInput]);
+  resetValidation(editProfileModal, [nameInput, jobInput], settings);
 });
 
 editProfileCloseBtn.addEventListener("click", function () {

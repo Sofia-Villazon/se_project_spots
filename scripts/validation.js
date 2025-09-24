@@ -17,6 +17,7 @@ const showInputError = (formElement, inputElement, errorMessage, config) => {
 const hideInputError = (formElement, inputElement, config) => {
   const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
   inputElement.classList.remove(config.inputErrorClass);
+  errorElement.classList.remove(config.errorClass);
   errorElement.textContent = "";
 };
 
@@ -64,6 +65,10 @@ const setEventListeners = (formElement, config) => {
   const buttonElement = formElement.querySelector(config.submitButtonSelector);
 
   toggleButtonState(inputList, buttonElement, config);
+
+  formElement.addEventListener("reset", () => {
+    disableButton(buttonElement, settings);
+  });
 
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", function () {

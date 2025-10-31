@@ -1,3 +1,12 @@
+import "./index.css";
+
+import {
+  settings,
+  enableValidation,
+  resetValidation,
+  disableBtnElement,
+} from "../scripts/validation.js";
+
 const initialCards = [
   {
     name: "Val Thorens",
@@ -169,3 +178,5 @@ addCardFormElement.addEventListener("submit", handleAddCardSubmit);
 initialCards.forEach(function (item) {
   cardsGrid.prepend(getCardElement(item));
 });
+
+enableValidation(settings);

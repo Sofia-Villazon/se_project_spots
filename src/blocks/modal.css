@@ -35,6 +35,10 @@
 	position: relative;
 }
 
+.modal__container_delete {
+	max-width: 630px;
+}
+
 .modal__image-container {
 	position: relative;
 }
@@ -50,6 +54,13 @@
 	opacity: 40%;
 	background: center / contain no-repeat rgb(0, 0, 0, 0)
 		url(../images/close-btn_icon.png);
+}
+
+.modal__close-btn_delete {
+	right: -52px;
+	top: 0px;
+	opacity: 100%;
+	background-image: url(../images/close-btn_icon_white.png);
 }
 
 .modal__close-btn:hover {
@@ -97,6 +108,11 @@
 	line-height: 100%;
 }
 
+.modal__title_delete {
+	font-size: 24px;
+	text-align: center;
+}
+
 .modal__form {
 	display: flex;
 	flex-direction: column;
@@ -105,6 +121,8 @@
 
 .modal__label {
 	font-size: 16px;
+	font-weight: 500;
+	color: #212121b2;
 }
 
 .modal__input {
@@ -142,6 +160,13 @@
 	padding-top: 8px;
 }
 
+.modal__delete-btns {
+	margin: 0;
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+}
+
 .modal__submit-btn {
 	padding: 18px 0;
 	background-color: #212121;
@@ -163,6 +188,30 @@
 	opacity: 20%;
 }
 
+.modal__submit-btn_delete {
+	background-color: #ff6565;
+	border: none;
+}
+
+.modal__submit-btn_delete:hover {
+	opacity: 100%;
+	background-color: #ff3333;
+	border: none;
+	color: #212121;
+}
+
+.modal__submit-btn_cancel {
+	background-color: rgba(0, 0, 0, 0);
+	color: #212121;
+}
+
+.modal__submit-btn_cancel:hover {
+	opacity: 100%;
+	background-color: #212121;
+	border: none;
+	color: #ffffff;
+}
+
 @media screen and (max-width: 630px) {
 	.modal_type_preview {
 		padding: 0 16px;
@@ -170,6 +219,11 @@
 
 	.modal__container {
 		padding: 12px;
+	}
+
+	.modal__container_delete {
+		max-width: 300px;
+		max-height: 208px;
 	}
 
 	.modal__close-btn {
@@ -182,6 +236,11 @@
 		right: 0;
 	}
 
+	.modal__close-btn_delete {
+		top: -56px;
+		right: 0;
+	}
+
 	.modal__image {
 		max-width: unset;
 	}
@@ -191,12 +250,18 @@
 	}
 
 	.modal__title {
-		padding: 10px 0;
+		padding-bottom: 24px;
 		font-size: 20px;
+		margin: 0;
+	}
+
+	.modal__title_delete {
+		padding: 0;
+		margin: 0;
 	}
 
 	.modal__form {
-		gap: 24px;
+		gap: 20px;
 	}
 
 	.modal__input {
@@ -206,5 +271,13 @@
 	.modal__submit-btn {
 		max-width: none;
 		margin: 0 auto;
+	}
+
+	.modal__delete-btns {
+		flex-direction: column;
+		gap: 12px;
+		align-items: center;
+		margin: 0 72px;
+		max-width: 156px;
 	}
 }

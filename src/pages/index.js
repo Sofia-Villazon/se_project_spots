@@ -6,10 +6,10 @@ import {
   disableBtnElement,
 } from "../scripts/validation.js";
 
-import { settings, initialCards } from "../scripts/vendor/utils/constants.js";
+import { settings, initialCards } from "../scripts/utils/constants.js";
 
-import Api from "../scripts/vendor/Apis.js";
-import { setButtonText } from "../scripts/vendor/utils/helpers.js";
+import Api from "../scripts/Apis.js";
+import { setButtonText } from "../scripts/utils/helpers.js";
 
 // API
 const api = new Api({
@@ -120,7 +120,7 @@ function handleDeleteSubmit(evt) {
       closeModal(deleteModal);
     })
     .catch(console.error)
-    .finally(() => setButtonText(submitBtn, false));
+    .finally(() => setButtonText(submitBtn, false, "Delete", "Deleting"));
 }
 
 function handleDeleteCard(cardElement, cardId) {
@@ -140,13 +140,17 @@ profileImageBtn.addEventListener("click", (evt) => {
 function handleProfilePictureFormSubmit(evt) {
   evt.preventDefault();
 
+  const submitBtn = evt.submitter;
+  setButtonText(submitBtn, true);
+
   api
     .editAvatar(profileImageInput.value)
     .then(() => {
       profileImageElement.src = profileImageInput.value;
     })
     .then(() => closeModal(profileImageModal))
-    .catch(console.error);
+    .catch(console.error)
+    .finally(() => setButtonText(submitBtn, false));
 }
 
 profilePictureFormElement.addEventListener(
@@ -251,6 +255,7 @@ function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   const submitBtn = evt.submitter;
   setButtonText(submitBtn, true);
+
   api
     .editUsersInfo({ name: nameInput.value, about: jobInput.value })
     .then((data) => {

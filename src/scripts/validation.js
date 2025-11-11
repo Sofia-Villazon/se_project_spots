@@ -1,4 +1,4 @@
-import { settings } from "./vendor/utils/constants";
+import { settings } from "./utils/constants";
 
 const showInputError = (formElement, inputElement, errorMessage, config) => {
   const errorElement = formElement.querySelector(`#${inputElement.id}-error`);

@@ -1,11 +1,4 @@
-const settings = {
-  formSelector: ".modal__form",
-  inputSelector: ".modal__input",
-  submitButtonSelector: ".modal__submit-btn",
-  inactiveButtonClass: "modal__submit-btn_inactive",
-  inputErrorClass: "modal__input_type_error",
-  errorClass: "modal__error_visible",
-};
+import { settings } from "./utils/constants";
 
 const showInputError = (formElement, inputElement, errorMessage, config) => {
   const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
@@ -67,7 +60,7 @@ const setEventListeners = (formElement, config) => {
   toggleButtonState(inputList, buttonElement, config);
 
   formElement.addEventListener("reset", () => {
-    disableButton(buttonElement, settings);
+    disableBtnElement(buttonElement, settings);
   });
 
   inputList.forEach((inputElement) => {

@@ -41,4 +41,8 @@ Good luck and have fun!
 
 **Video about my project**
 
+Check out these videos, where I describe my project
+and some challenges I faced while building it:
+
 - [About Project 3: Spots](https://youtu.be/W-RybI_ma5o)
+- [Project Pitch: Spots](https://drive.google.com/file/d/1-2Ina1ZeSw-aHlsAT5xsXfBjXwipbYuJ/view?usp=sharing)
